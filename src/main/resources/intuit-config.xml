@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<intuit-config>
+    <baseURL>
+        <qbd>https://sandbox-quickbooks.api.intuit.com/v3/company</qbd>
+        <qbo>https://sandbox-quickbooks.api.intuit.com/v3/company</qbo>
+    </baseURL>
+</intuit-config>
