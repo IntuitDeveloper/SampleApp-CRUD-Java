@@ -100,7 +100,7 @@ public final class BillHelper {
 		line1.setAmount(new BigDecimal("30"));
 		List<LinkedTxn> linkedTxnList1 = new ArrayList<LinkedTxn>();
 		LinkedTxn linkedTxn1 = new LinkedTxn();
-		Bill bill = BillHelper.getBill(service);
+		Bill bill = getBill(service);
 		linkedTxn1.setTxnId(bill.getId());
 		linkedTxn1.setTxnType(TxnTypeEnum.BILL.value());
 		linkedTxnList1.add(linkedTxn1);

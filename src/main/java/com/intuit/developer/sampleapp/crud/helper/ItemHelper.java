@@ -29,7 +29,7 @@ public final class ItemHelper {
 		item.setActive(true);
 		item.setTaxable(false);
 		item.setUnitPrice(new BigDecimal("200"));
-		item.setType(ItemTypeEnum.DISCOUNT);
+		item.setType(ItemTypeEnum.SERVICE);
 
 		Account incomeAccount = AccountHelper.getIncomeBankAccount(service);
 		item.setIncomeAccountRef(AccountHelper.getAccountRef(incomeAccount));
