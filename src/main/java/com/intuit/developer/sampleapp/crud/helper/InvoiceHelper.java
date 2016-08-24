@@ -46,17 +46,6 @@ public final class InvoiceHelper {
 		Customer customer = CustomerHelper.getCustomer(service);
 		invoice.setCustomerRef(CustomerHelper.getCustomerRef(customer));
 		
-		// add tax code ref
-		TaxCode taxCode = TaxCodeInfo.getTaxCode(service);
-		
-		TxnTaxDetail txnTaxDetail = new TxnTaxDetail();
-		txnTaxDetail.setTotalTax(new BigDecimal(0));
-		txnTaxDetail.setDefaultTaxCodeRef(TaxCodeInfo.getTaxCodeRef(taxCode));
-
-		//invoice.setTxnTaxDetail(txnTaxDetail);
-
-		// Optional Fields
-		//invoice.setExchangeRate(new BigDecimal("1"));
 		invoice.setPrivateNote("Testing");
 		invoice.setTxnStatus("Payable");
 		invoice.setBalance(new BigDecimal("10000"));
@@ -65,7 +54,6 @@ public final class InvoiceHelper {
 
 		List<Line> invLine = new ArrayList<Line>();
 		Line line = new Line();
-		//line.setId("3");
 		line.setDescription("test");
 		line.setAmount(new BigDecimal("10000"));
 		line.setDetailType(LineDetailTypeEnum.SALES_ITEM_LINE_DETAIL);
@@ -75,11 +63,6 @@ public final class InvoiceHelper {
 		Item item = ItemHelper.getItem(service);
 		silDetails.setItemRef(ItemHelper.getItemRef(item));
 
-		ReferenceType refTaxCode = new ReferenceType();
-		refTaxCode.setValue("NON");
-
-		//silDetails.setTaxCodeRef(refTaxCode);
-
 		line.setSalesItemLineDetail(silDetails);
 		invLine.add(line);
 		invoice.setLine(invLine);
@@ -88,8 +71,6 @@ public final class InvoiceHelper {
 
 		invoice.setPrintStatus(PrintStatusEnum.NEED_TO_PRINT);
 		invoice.setTotalAmt(new BigDecimal("10000"));
-
-		//invoice.setEmailStatus(EmailStatusEnum.EMAIL_SENT);
 		invoice.setFinanceCharge(false);
 		
 		return invoice;

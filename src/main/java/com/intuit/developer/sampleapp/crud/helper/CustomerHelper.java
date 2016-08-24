@@ -79,7 +79,6 @@ public final class CustomerHelper {
 		customer.setContactName("Contact Name");
 		customer.setAltContactName("Alternate Name");
 		customer.setNotes("Testing Notes");
-		// Setting Customer balance as 0, as it says balance should be 0.
 		customer.setBalance(new BigDecimal("0"));
 		customer.setOpenBalanceDate(DateUtils.getCurrentDateTime());
 		customer.setBalanceWithJobs(new BigDecimal("5055.5"));

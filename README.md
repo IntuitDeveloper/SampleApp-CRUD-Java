@@ -63,7 +63,7 @@ Follow similar steps for other classes.
 
 Notes: 
 
-1. The sample code has been implemented for US locale company, certain fields may not be application for other locales or minor version. Care should be taken to handle such scenarios separately.
+1. The sample code has been implemented for US locale company, certain fields may not be applicable for other locales or minor version. Care should be taken to handle such scenarios separately.
 2. Before running AttachableUpload sample, update the path of the pdf that you wish to upload to point to your local directory. 
 
 ## Project Structure

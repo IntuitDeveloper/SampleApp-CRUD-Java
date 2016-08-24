@@ -46,14 +46,8 @@ public final class CreditMemoHelper {
 		salesItemLineDetail1.setItemRef(ItemHelper.getItemRef(item));		
 		line1.setSalesItemLineDetail(salesItemLineDetail1);
 		
-		Line line2 = new Line();
-		line2.setAmount(new BigDecimal("300.00"));
-		line2.setDetailType(LineDetailTypeEnum.SUB_TOTAL_LINE_DETAIL);
-		line2.setSubTotalLineDetail(new SubTotalLineDetail());
-		
 		List<Line> lines1 = new ArrayList<Line>();
 		lines1.add(line1);
-		//lines1.add(line2);
 		creditMemo.setLine(lines1);
 		
 		creditMemo.setDocNumber(RandomStringUtils.randomNumeric(4));
