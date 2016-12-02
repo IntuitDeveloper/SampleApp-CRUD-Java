@@ -31,7 +31,7 @@ In order to successfully run this sample app you need a few things:
 2. A [developer.intuit.com](http://developer.intuit.com) account
 3. An app on [developer.intuit.com](http://developer.intuit.com) and the associated app token, consumer key, and consumer secret.
 4. One sandbox company, connect the company with your app and generate the oauth tokens.
-5. QuickBooks Java SDK, download from [here](http://bit.ly/YaVgEe) (see instructions in "Running the code" section on how to include it) 
+5. QuickBooks Java SDK, download from [here](http://bit.ly/2fWyxwS) (see instructions in "Running the code" section on how to include it) 
 
 ## First Use Instructions
 
