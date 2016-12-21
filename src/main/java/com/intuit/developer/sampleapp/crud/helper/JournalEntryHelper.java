@@ -8,6 +8,8 @@ import java.util.List;
 import org.apache.commons.lang.RandomStringUtils;
 
 import com.intuit.ipp.data.Account;
+import com.intuit.ipp.data.EntityTypeEnum;
+import com.intuit.ipp.data.EntityTypeRef;
 import com.intuit.ipp.data.JournalEntry;
 import com.intuit.ipp.data.JournalEntryLineDetail;
 import com.intuit.ipp.data.Line;
@@ -52,6 +54,10 @@ public final class JournalEntryHelper {
 		journalEntryLineDetail2.setPostingType(PostingTypeEnum.CREDIT);
 		Account creditAccount = AccountHelper.getCreditCardBankAccount(service);
         journalEntryLineDetail2.setAccountRef(AccountHelper.getAccountRef(creditAccount));
+        EntityTypeRef eRef = new EntityTypeRef();
+        eRef.setType(EntityTypeEnum.VENDOR);
+        eRef.setEntityRef(VendorHelper.getVendorRef(VendorHelper.getVendor(service)));
+        journalEntryLineDetail2.setEntity(eRef);
 		
 		line2.setJournalEntryLineDetail(journalEntryLineDetail2);
 		line2.setDescription("Description " + RandomStringUtils.randomAlphanumeric(15));
