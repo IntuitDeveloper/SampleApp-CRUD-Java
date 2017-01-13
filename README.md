@@ -38,9 +38,9 @@ In order to successfully run this sample app you need a few things:
 1. Clone the GitHub repo to your computer
 2. Run the following commands to install the SDK to your local maven repo. Update the location of the jar to your local directory
 
-	mvn install:install-file -Dfile=/Your local directory path/ipp-v3-java-devkit-jar-with-dependencies-2.5.0.jar -DgroupId=ipp.v3.java.devkit.dependencies -DartifactId=ipp-v3-java-devkit-dependencies -Dversion=2.5.0 -Dpackaging=jar
+	mvn install:install-file -Dfile=/Your local directory path/ipp-v3-java-devkit-jar-with-dependencies-2.8.0.jar -DgroupId=ipp.v3.java.devkit.dependencies -DartifactId=ipp-v3-java-devkit-dependencies -Dversion=2.8.0 -Dpackaging=jar
 
-	mvn install:install-file -Dfile=/Your local directory path/ipp-v3-java-data-2.5.0.jar -DgroupId=ipp.v3.java.data -DartifactId=ipp-v3-java-data -Dversion=2.5.0 -Dpackaging=jar
+	mvn install:install-file -Dfile=/Your local directory path/ipp-v3-java-data-2.8.0.jar -DgroupId=ipp.v3.java.data -DartifactId=ipp-v3-java-data -Dversion=2.8.0 -Dpackaging=jar
 3. Import the project in Eclipse or any other IDE of your choice
 4. Fill in the [`config.properties`](src/main/resources/config.properties) file values (app token, consumer key, consumer secret) by copying over from the keys section for your app.
 5. Fill in the [`config.properties`](src/main/resources/config.properties) file values (realmId, access token key, access token secret) with the oauth tokens generated while connecting with the company. 
