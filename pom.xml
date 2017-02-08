@@ -7,12 +7,12 @@
      <dependency>
       <groupId>ipp.v3.java.devkit.dependencies</groupId>
       <artifactId>ipp-v3-java-devkit-dependencies</artifactId>
-      <version>2.8.0</version>
+      <version>2.9.0</version>
  	</dependency>
  	<dependency>
       <groupId>ipp.v3.java.data</groupId>
       <artifactId>ipp-v3-java-data</artifactId>
-      <version>2.8.0</version>
+      <version>2.9.0</version>
  	</dependency>
  	<!-- for logging -->
 	<dependency>
