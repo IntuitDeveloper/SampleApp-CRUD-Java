@@ -4,13 +4,14 @@
   <artifactId>CRUD-SampleApp-Java</artifactId>
   <version>0.0.1-SNAPSHOT</version> 
    <dependencies>
-     <dependency>
-      <groupId>ipp.v3.java.devkit.dependencies</groupId>
-      <artifactId>ipp-v3-java-devkit-dependencies</artifactId>
+    <dependency>
+      <groupId>com.intuit.quickbooks-online</groupId>
+      <artifactId>ipp-v3-java-devkit</artifactId>
+      <classifier>jar-with-dependencies</classifier>
       <version>2.9.0</version>
  	</dependency>
  	<dependency>
-      <groupId>ipp.v3.java.data</groupId>
+      <groupId>com.intuit.quickbooks-online</groupId>
       <artifactId>ipp-v3-java-data</artifactId>
       <version>2.9.0</version>
  	</dependency>
