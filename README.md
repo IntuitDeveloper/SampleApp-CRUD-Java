@@ -31,14 +31,15 @@ In order to successfully run this sample app you need a few things:
 2. A [developer.intuit.com](http://developer.intuit.com) account
 3. An app on [developer.intuit.com](http://developer.intuit.com) and the associated app token, consumer key, and consumer secret.
 4. One sandbox company, connect the company with your app and generate the oauth tokens.
-5. QuickBooks Java SDK, download from [here](http://bit.ly/2fWyxwS) (see instructions in "Running the code" section on how to include it) 
+5. QuickBooks Java SDK, download from [here](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.intuit.quickbooks-online%22) (see instructions in "Running the code" section on how to include it) 
 
 ## First Use Instructions
 
 1. Clone the GitHub repo to your computer
 2. Import the project in Eclipse or any other IDE of your choice
-3. Fill in the [`config.properties`](src/main/resources/config.properties) file values (app token, consumer key, consumer secret) by copying over from the keys section for your app.
-4. Fill in the [`config.properties`](src/main/resources/config.properties) file values (realmId, access token key, access token secret) with the oauth tokens generated while connecting with the company. 
+3. In [`config.properties`](src/main/resources/config.properties), set oauth.type as 1 or 2 depending on type of app you have. For OAuth2 apps set value as 2.
+4. For OAuth2 apps, fill in the [`config.properties`](src/main/resources/config.properties) file values (realmid, oauth2.accessToken).
+5. For OAuth1 apps, fill in the [`config.properties`](src/main/resources/config.properties) file values (realmId, app token, consumer key, consumer secret, access token key, access token secret). 
 5. Run maven install.
 
 Note: If you do not want to use maven, just import the project and add the jars to your project externally.
