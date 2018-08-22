@@ -28,5 +28,11 @@ public final class TaxCodeInfo {
 			taxcodeRef.setValue(taxcode.getId());
 			return taxcodeRef;
 	  }
+	  
+	  public static ReferenceType getTaxCodeRef(String taxcode) {
+			ReferenceType taxcodeRef = new ReferenceType();
+			taxcodeRef.setValue(taxcode);
+			return taxcodeRef;
+	  }
 
 }

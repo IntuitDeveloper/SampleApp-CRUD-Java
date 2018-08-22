@@ -30,5 +30,12 @@ public final class Address {
 		webSite.setTag("Business");
 		return webSite;
 	}
+	
+	public static PhysicalAddress getAddressForAST() {
+		PhysicalAddress billingAdd = new PhysicalAddress();
+		billingAdd.setLine1("2700 Coast Ave");
+		billingAdd.setLine2("MountainView, CA 94043");
+		return billingAdd;
+	}
 
 }

@@ -8,12 +8,12 @@
       <groupId>com.intuit.quickbooks-online</groupId>
       <artifactId>ipp-v3-java-devkit</artifactId>
       <classifier>jar-with-dependencies</classifier>
-      <version>4.0.2</version>
+      <version>4.0.5</version>
  	</dependency>
  	<dependency>
       <groupId>com.intuit.quickbooks-online</groupId>
       <artifactId>ipp-v3-java-data</artifactId>
-      <version>4.0.2</version>
+      <version>4.0.5</version>
  	</dependency>
  	<!-- for logging -->
 	<dependency>

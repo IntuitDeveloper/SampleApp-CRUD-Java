@@ -54,9 +54,10 @@ public final class InvoiceHelper {
 
 		List<Line> invLine = new ArrayList<Line>();
 		Line line = new Line();
-		line.setDescription("test");
+		line.setDescription("New test (14.48mm)\nGiftBox: Red Heart Gift Box [ £ 3.00]");
 		line.setAmount(new BigDecimal("10000"));
 		line.setDetailType(LineDetailTypeEnum.SALES_ITEM_LINE_DETAIL);
+		
 		
 		SalesItemLineDetail silDetails = new SalesItemLineDetail();
 		
@@ -73,6 +74,79 @@ public final class InvoiceHelper {
 		invoice.setTotalAmt(new BigDecimal("10000"));
 		invoice.setFinanceCharge(false);
 		
+		return invoice;
+	}
+	
+	public static Invoice getASTInvoiceFields(DataService service) throws FMSException, ParseException {
+		Invoice invoice = new Invoice();
+		
+		//add customer
+		Customer customer = CustomerHelper.getCustomer(service);
+		invoice.setCustomerRef(CustomerHelper.getCustomerRef(customer));
+
+		// add line
+		List<Line> invLine = new ArrayList<Line>();
+		Line line = new Line();
+		line.setAmount(new BigDecimal("100"));
+		line.setDetailType(LineDetailTypeEnum.SALES_ITEM_LINE_DETAIL);
+			
+		SalesItemLineDetail silDetails = new SalesItemLineDetail();
+		
+		Item item = ItemHelper.getItem(service);
+		silDetails.setItemRef(ItemHelper.getItemRef(item));
+		
+		//set line item as taxable
+		silDetails.setTaxCodeRef(TaxCodeInfo.getTaxCodeRef("TAX"));
+
+		line.setSalesItemLineDetail(silDetails);
+		invLine.add(line);
+		invoice.setLine(invLine);
+		
+		TxnTaxDetail txnTaxDetail = new TxnTaxDetail();
+		//pass dummy tax code
+		TaxCode taxcode = TaxCodeInfo.getTaxCode(service);
+		txnTaxDetail.setTxnTaxCodeRef(TaxCodeInfo.getTaxCodeRef(taxcode));
+		invoice.setTxnTaxDetail(txnTaxDetail);
+		
+		//set shipping address
+		invoice.setShipAddr(Address.getAddressForAST());
+
+		return invoice;
+	}
+	
+	public static Invoice getASTOverrideFields(DataService service) throws FMSException, ParseException {
+		Invoice invoice = new Invoice();
+		
+		//add customer
+		Customer customer = CustomerHelper.getCustomer(service);
+		invoice.setCustomerRef(CustomerHelper.getCustomerRef(customer));
+
+		// add line
+		List<Line> invLine = new ArrayList<Line>();
+		Line line = new Line();
+		line.setAmount(new BigDecimal("100"));
+		line.setDetailType(LineDetailTypeEnum.SALES_ITEM_LINE_DETAIL);
+			
+		SalesItemLineDetail silDetails = new SalesItemLineDetail();
+		
+		Item item = ItemHelper.getItem(service);
+		silDetails.setItemRef(ItemHelper.getItemRef(item));
+		
+		//set line item as taxable
+		silDetails.setTaxCodeRef(TaxCodeInfo.getTaxCodeRef("TAX"));
+
+		line.setSalesItemLineDetail(silDetails);
+		invLine.add(line);
+		invoice.setLine(invLine);
+		
+		TxnTaxDetail txnTaxDetail = new TxnTaxDetail();
+		//override tax value
+		txnTaxDetail.setTotalTax(new BigDecimal("12"));
+		invoice.setTxnTaxDetail(txnTaxDetail);
+		
+		//set shipping address
+		invoice.setShipAddr(Address.getAddressForAST());
+
 		return invoice;
 	}
 
@@ -93,6 +167,8 @@ public final class InvoiceHelper {
 			ReferenceType invoiceRef = new ReferenceType();
 			invoiceRef.setValue(invoice.getId());
 			return invoiceRef;
-	  }
+	}
+	
+	
 	  
 }
