@@ -48,12 +48,7 @@ public class ContextFactory {
 			LOG.error("Error while loading properties", e.getCause());
 		}
 		//create oauth object
-		IAuthorizer oauth; 
-		if(prop.getProperty("oauth.type").equals("1")) {
-			oauth = new OAuthAuthorizer(prop.getProperty(consumerKey), prop.getProperty(consumerSecret), prop.getProperty(accessToken), prop.getProperty(accessTokenSecret));
-		} else {
-			oauth = new OAuth2Authorizer(prop.getProperty(bearerToken));
-		}
+		OAuth2Authorizer oauth = new OAuth2Authorizer(prop.getProperty(bearerToken));
 		//create context
 		Context context = new Context(oauth, ServiceType.QBO, prop.getProperty(companyID));
 		
