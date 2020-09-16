@@ -27,7 +27,6 @@ public class RecurringTransactionQuery {
 
     public static void queryRecurringTxn() throws Exception {
 
-//
         try {
             DataService service = DataServiceFactory.getDataService();
             String sql = "select * from RecurringTransaction";
@@ -42,7 +41,6 @@ public class RecurringTransactionQuery {
                 IntuitEntity intuitEntity = txn.getIntuitObject().getValue();
                 LOG.info("Recurring txn type: " + intuitEntity.getClass().getName());
                 LOG.info("Recurring txn ID: " + intuitEntity.getId());
-
             }
 
 
