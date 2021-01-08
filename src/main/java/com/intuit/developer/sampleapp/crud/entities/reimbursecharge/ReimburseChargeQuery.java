@@ -46,8 +46,7 @@ public class ReimburseChargeQuery {
 			// get reimbursecharge based on HasBeenInvoiced
 			sql = "Select * from ReimburseCharge Where HasBeenInvoiced = false";
 			queryResult = service.executeQuery(sql);
-			count = queryResult.getEntities().size();
-			LOG.info("There are " + count + " Reimburse Charges where HasBeenInvoiced = false");
+			LOG.info("Size: " + queryResult.getEntities().size());
 		} catch (FMSException e) {
 			List<Error> list = e.getErrorList();
 			list.forEach(error -> LOG.error("Error while calling executeQuery :: " + error.getMessage()));
