@@ -1,4 +1,4 @@
-[![Sample Banner](views/Sample.png)][ss1]
+[![Rate your Sample](views/Ratesample.png)][ss1][![Yes](views/Thumbup.png)][ss2][![No](views/Thumbdown.png)][ss3]
 
 # SampleApp-CRUD-Java
 SampleApp-CRUD-Java
@@ -72,4 +72,6 @@ Notes:
 * Java code for QBO DataService object are located under [`qbo`](src/main/java/com/intuit/developer/sampleapp/crud/qbo) directory 
 * Config files are located in the [`resources`](src/main/resources) directory
 
-[ss1]: https://help.developer.intuit.com/s/samplefeedback?cid=9010&repoName=SampleApp-CRUD-Java
+[ss1]: #
+[ss2]: https://customersurveys.intuit.com/jfe/form/SV_9LWgJBcyy3NAwHc?check=Yes&checkpoint=SampleApp-CRUD-Java&pageUrl=github
+[ss3]: https://customersurveys.intuit.com/jfe/form/SV_9LWgJBcyy3NAwHc?check=No&checkpoint=SampleApp-CRUD-Java&pageUrl=github
